@@ -18,7 +18,6 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
- {path: 'homeConnected', component: HomeConnectedComponent},
   { path: 'sign-in', component: SignInComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'users', component: UsersComponent },
@@ -28,7 +27,8 @@ const routes: Routes = [
   { path: 'users/demande/perso', component: DemandePersoComponent },
   { path: 'session/:session.id/test', component: TestComponent },
   { path: 'session/:session.id', component: SessionsComponent },
-  { path: '404', component: NotFoundComponent }
+  { path: '404', component: NotFoundComponent },
+  {path: 'homeConnected', component: HomeConnectedComponent},
 ];
 
 @NgModule({

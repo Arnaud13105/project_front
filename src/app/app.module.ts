@@ -25,7 +25,6 @@ import { HomeConnectedComponent } from './components/home-connected/home-connect
   declarations: [
     AppComponent,
     HomeComponent,
-
     SignInComponent,
     RegisterComponent,
     UsersComponent,
@@ -38,7 +37,7 @@ import { HomeConnectedComponent } from './components/home-connected/home-connect
     NavbarreComponent,
     FooterComponent,
     NotFoundComponent,
-    HomeConnectedComponent
+    HomeConnectedComponent,
   ],
   imports: [
     BrowserModule,
