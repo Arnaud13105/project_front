@@ -36,7 +36,7 @@ import { NotFoundComponent } from './components/core/not-found/not-found.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

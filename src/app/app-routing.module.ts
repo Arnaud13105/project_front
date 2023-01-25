@@ -15,14 +15,14 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'sign-in', component: SignInComponent },
-  { path: '/register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'users', component: UsersComponent },
-  { path: '/formation/{{id}}', component: FormationsComponent },
-  { path: '/formation/{{id}}/session/{{session.id}}', component: FormulaireComponent },
-  { path: '/users/demande/intra', component: DemandeIntraComponent },
-  { path: '/users/demande/perso', component: DemandePersoComponent },
-  { path: 'session/{{session.id}}/test', component: TestComponent },
-  { path: '/session/{{session.id}}', component: SessionsComponent },
+  { path: 'formation/:id', component: FormationsComponent },
+  { path: 'formation/:id/session/:session.id', component: FormulaireComponent },
+  { path: 'users/demande/intra', component: DemandeIntraComponent },
+  { path: 'users/demande/perso', component: DemandePersoComponent },
+  { path: 'session/:session.id/test', component: TestComponent },
+  { path: 'session/:session.id', component: SessionsComponent },
   { path: '404', component: NotFoundComponent }
 ];
 
