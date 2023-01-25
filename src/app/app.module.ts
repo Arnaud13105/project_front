@@ -16,11 +16,16 @@ import { SessionsComponent } from './components/forms/sessions/sessions.componen
 import { NavbarreComponent } from './components/core/navbarre/navbarre.component';
 import { FooterComponent } from './components/core/footer/footer.component';
 import { NotFoundComponent } from './components/core/not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeConnectedComponent } from './components/home-connected/home-connected.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+
     SignInComponent,
     RegisterComponent,
     UsersComponent,
@@ -32,11 +37,14 @@ import { NotFoundComponent } from './components/core/not-found/not-found.compone
     SessionsComponent,
     NavbarreComponent,
     FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HomeConnectedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

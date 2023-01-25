@@ -1,1 +1,57 @@
-<p>users works!</p>
+<div class="row">
+    <div class="col-6">
+        <form action="POST" (ngSubmit)="add(utilisateurForm)"  #utilisateurForm=ngForm>
+            <input type="text" class="form-control" name="id" [(ngModel)]="utilisateur.id" #id="ngModel" hidden>
+            <div class="form-group">
+                <label>prenom</label>
+                <input type="text" class="form-control" name="firstName" [(ngModel)]="utilisateur.prenom" #prenom="ngModel">
+            </div>
+            <div class="form-group">
+                <label>nom</label>
+                <input type="text" class="form-control" name="lastName" [(ngModel)]="utilisateur.nom" #nom="ngModel">
+            </div>
+            <div class="form-group">
+                <label>date de naissance</label>
+                <input type="date" class="form-control" name="dateNaissance" [(ngModel)]="utilisateur.dateNaissance" #dateNaissance="ngModel">
+            </div>
+            <div class="form-group">
+                <label>email</label>
+                <input type="email" class="form-control" name="mail" [(ngModel)]="utilisateur.email" #email="ngModel">
+            </div>
+            <div class="form-group">
+                <label>Adresse</label>
+                <input type="text" class="form-control" name="adress" [(ngModel)]="utilisateur.adresse" #adresse="ngModel">
+            </div>
+            <div class="form-group">
+                <label>Entreprise</label>
+                <input type="text" class="form-control" name="entreprise" [(ngModel)]="utilisateur.entreprise" #entreprise="ngModel">
+            </div>
+            <div class="form-group">
+                <label>telephone</label>
+                <input type="text" class="form-control" name="tel" [(ngModel)]="utilisateur.telephone" #telephone="ngModel">
+            </div>
+            <div class="form-group">
+                <label>statut</label>
+                <input type="text" class="form-control" name="statut" [(ngModel)]="utilisateur.statut" #statut="ngModel">
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input type="text" class="form-control" name="password" [(ngModel)]="utilisateur.password" #password="ngModel">
+            </div>
+            <button type="submit" class="btn btn-success">Envoyer</button>
+        </form>
+    </div>
+    <div class="col-6">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of utilisateurs" >
+                <span>{{item.prenom}} {{item.nom}} {{item.dateNaissance}} {{item.email}} {{item.adresse}} {{item.entreprise}} {{item.telephone}} {{item.statut}} {{item.password}}</span>
+                <button class="btn btn-danger" (click)="delete(item.id!)">
+                    Supprimer
+                </button>
+                <button class="btn btn-primary" (click)="get(item.id!)">
+                    Afficher
+                </button>
+            </li>
+        </ul>        
+    </div>
+</div>

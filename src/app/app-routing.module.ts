@@ -10,10 +10,15 @@ import { SessionsComponent } from './components/forms/sessions/sessions.componen
 import { SignInComponent } from './components/forms/sign-in/sign-in.component';
 import { TestComponent } from './components/forms/test/test.component';
 import { UsersComponent } from './components/forms/users/users.component';
+import { HomeConnectedComponent } from './components/home-connected/home-connected.component';
 import { HomeComponent } from './components/home/home.component';
+
+
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+ {path: 'homeConnected', component: HomeConnectedComponent},
   { path: 'sign-in', component: SignInComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'users', component: UsersComponent },
