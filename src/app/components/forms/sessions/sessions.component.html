@@ -1,1 +1,21 @@
-<p>sessions works!</p>
+<h2>Listes des sessions pour la Formation 1</h2>
+
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Date de début de session</th>
+            <th> Date de fin </th>
+            <th> Lieu</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let session of sessions" >
+            <td> {{ session.dateDebut }} </td>
+            <td> {{ session.dateFin }} </td>
+            <td> {{ session.lieu }} </td>
+            <button  class = "btn btn-info"> Soumettre</button>
+        </tr>
+        <td>
+        </td>
+    </tbody>
+</table>
