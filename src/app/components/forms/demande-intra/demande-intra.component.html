@@ -4,11 +4,10 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center">Demande de formation Intra Entreprise</h5>
-                    <form>
+                    <form action="POST" (ngSubmit)="add(demandeintraForm)" #demandeintraForm=ngForm>
                         <h4>Coordonnées</h4>
                         <div class="form-row">
 
-                            <form action="POST" (ngSubmit)="add(demandeintraForm)" #demandeintraForm=ngForm>
                                 <input type="text" class="form-control" name="id" [(ngModel)]="demandeintra.id"
                                     #id="ngModel" hidden>
                                 <div class="row">
@@ -40,12 +39,12 @@
                                             #entreprise="ngModel" name="Entreprise" placeholder="Entreprise">
                                     </div>
                                 </div>
-                            </form>
+                            
                             <br>
                             <h4>Plannification</h4>
                             <div class="form-group col-md-6">
                                 <label>Date envisagée</label>
-                                <input type="datetime"  placeholder="yyyy-mm-dd" [(ngModel)]="demandeintra.dateDebut" #date="ngModel"
+                                <input type="date"  placeholder="yyyy-mm-dd" [(ngModel)]="demandeintra.dateDebut" #date="ngModel"
                                     class="form-control" name="dateDebut">
                             </div>
                         </div>
