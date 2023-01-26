@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeConnectedComponent } from './components/home-connected/home-connected.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,7 @@ import { HomeConnectedComponent } from './components/home-connected/home-connect
     NavbarreComponent,
     FooterComponent,
     NotFoundComponent,
-    HomeConnectedComponent
+    HomeConnectedComponent,
   ],
   imports: [
     BrowserModule,
