@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./formations.component.css']
 })
 export class FormationsComponent {
+ 
 
 }
