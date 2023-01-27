@@ -5,6 +5,7 @@ import { DemandeIntraComponent } from './components/forms/demande-intra/demande-
 import { DemandePersoComponent } from './components/forms/demande-perso/demande-perso.component';
 import { FormationsComponent } from './components/forms/formations/formations.component';
 import { FormulaireComponent } from './components/forms/formulaire/formulaire.component';
+import { LoginComponent } from './components/forms/login/login.component';
 import { RegisterComponent } from './components/forms/register/register.component';
 import { SessionsComponent } from './components/forms/sessions/sessions.component';
 import { SignInComponent } from './components/forms/sign-in/sign-in.component';
@@ -29,6 +30,8 @@ const routes: Routes = [
   { path: 'session/:session.id', component: SessionsComponent },
   { path: '404', component: NotFoundComponent },
   {path: 'homeConnected', component: HomeConnectedComponent},
+  {path: 'login', component: LoginComponent},
+
 ];
 
 @NgModule({
