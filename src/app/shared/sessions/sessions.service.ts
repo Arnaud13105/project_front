@@ -26,7 +26,6 @@ export class SessionsService {
     );
   }
 
-  
 
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';
