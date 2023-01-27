@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Formation} from 'src/app/interfaces/formation';
 import { ThemesService } from 'src/app/shared/themes/themes.service';
+import { Router } from '@angular/router';
 
 
 
@@ -26,5 +27,7 @@ getAll() {
   })
 }
 
-
+goTo(): void{
+  this.router.navigate(['/form']);
+}
 }
