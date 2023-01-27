@@ -10,8 +10,9 @@ import { SessionsService } from 'src/app/shared/sessions/sessions.service'
 export class SessionsComponent {
  session: Sessions = {};
  sessions: Sessions[] = [];
+ formationId!: any;
 
- constructor(private sessionsService: SessionsService) {}
+ constructor(private sessionsService: SessionsService) { this.formationId = localStorage.getItem('formationId');}
 
 ngOnInit(): void {
   this.getAll();

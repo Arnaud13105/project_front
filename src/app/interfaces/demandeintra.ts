@@ -9,5 +9,6 @@ export interface Demandeintra {
     lieu?: string,  
     eligibleCPF?: string,
     nbrInscrits?: number,
+    id_formation?: number;
     
 }

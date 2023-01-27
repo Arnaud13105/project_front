@@ -1,3 +1,5 @@
+import { Login } from "./login";
+
 export interface Sessions {
     id?: number,
     dateDebut?: string,
@@ -7,5 +9,6 @@ export interface Sessions {
     formateur?: string,
     support?: string,
     autres?: string,
+    id_formation?: number;
     
 }
