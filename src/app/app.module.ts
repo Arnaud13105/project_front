@@ -16,7 +16,7 @@ import { SessionsComponent } from './components/forms/sessions/sessions.componen
 import { NavbarreComponent } from './components/core/navbarre/navbarre.component';
 import { FooterComponent } from './components/core/footer/footer.component';
 import { NotFoundComponent } from './components/core/not-found/not-found.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeConnectedComponent } from './components/home-connected/home-connected.component';
 import { LoginComponent } from './components/forms/login/login.component';
@@ -42,6 +42,7 @@ import { LoginService } from './shared/login/login.service';
     NotFoundComponent,
     HomeConnectedComponent,
     LoginComponent,
+   
   ],
   imports: [
     BrowserModule,

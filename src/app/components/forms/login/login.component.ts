@@ -3,6 +3,7 @@ import { Login } from 'src/app/interfaces/login';
 import { LoginService } from 'src/app/shared/login/login.service';
 import { Users } from 'src/app/interfaces/users'
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +14,18 @@ export class LoginComponent {
 
   email!: string;
   password!: string;
-user!: Users
+
+
+
 
 
   res!: any;
 
   constructor(
     private loginservice: LoginService,
-    private router: Router
+    private router: Router,
+    
+    
     ) { }
 
 
@@ -30,6 +35,7 @@ user!: Users
       email : this.email,
       password : this.password
     }
+   
 
    
 
@@ -42,7 +48,9 @@ user!: Users
       if (this.res.id !== undefined) {
         this.router.navigate(['/homeConnected']),
         localStorage.setItem('user', res)
-      } else { console.log('error'); }
+      } else { console.log('error');
+      alert("email ou password invalide")
+       }
     })
 
     
