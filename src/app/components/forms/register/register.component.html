@@ -1,38 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-      <div class="card card-signin my-5">
-        <div class="card-body">
-          <h5 class="card-title text-center">Connexion</h5>
-          <form class="form-signin">
-            <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus>
-              <label for="inputEmail">Adresse e-mail</label>
-            </div>
 
-            <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-              <label for="inputPassword">Mot de passe</label>
-            </div>
-
-            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Connexion</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<br>
-<p class="text-center">si vous n'avez pas de compte, veuillez vous enregistrer</p>
 <div class="container">
   <div class="row">
     <div class="col-sm-9 col-md-7 col-lg-10 mx-auto">
       <div class="card card-signin my-5">
         <div class="card-body">
           <h5 class="card-title text-center">Formulaire d'inscription</h5>
-          <form action="POST" (ngSubmit)="add(utilisateurForm)"  #utilisateurForm=ngForm>
+          <form action="POST" (ngSubmit)="add(utilisateur2Form)"  #utilisateur2Form=ngForm>
 
             <div class="form-row">
 
@@ -40,18 +13,18 @@
                 <div class="row">
                   <div class="col">
                     <label for="inputAddress2">Prenom*</label>
-                    <input type="text" class="form-control" name="prenom" placeholder="Prenom" [(ngModel)]="utilisateur.prenom" #prenom="ngModel">
+                    <input type="text" class="form-control" name="prenom" placeholder="Prenom" [(ngModel)]="utilisateur2.prenom" #prenom="ngModel">
                   </div>
                   <div class="col">
                     <label for="inputAddress2">Nom*</label>
-                    <input type="text" class="form-control" name="nom" placeholder="Nom" [(ngModel)]="utilisateur.nom" #nom="ngModel">
+                    <input type="text" class="form-control" name="nom" placeholder="Nom" [(ngModel)]="utilisateur2.nom" #nom="ngModel">
                   </div>
                 </div>
               </form>
               <div class="form-group col-md-6">
 
                 <label for="inputAddress2">date de naissance*</label>
-                <input type="date" class="form-control" name="dateNaissance" [(ngModel)]="utilisateur.dateNaissance" #dateNaissance="ngModel">
+                <input type="date" class="form-control" name="dateNaissance" [(ngModel)]="utilisateur2.dateNaissance" #dateNaissance="ngModel">
               </div>
 
 
@@ -60,33 +33,33 @@
                 <div class="col">
 
                   <label for="inputEmail4">Email*</label>
-                  <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="utilisateur.email" #email="ngModel">
+                  <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="utilisateur2.email" #email="ngModel">
                 </div>
                 <div class="col">
                   <label for="inputPassword4">Password*</label>
-                  <input type="password" class="form-control"name="password" placeholder="Password" [(ngModel)]="utilisateur.password" #password="ngModel">
+                  <input type="password" class="form-control"name="password" placeholder="Password" [(ngModel)]="utilisateur2.password" #password="ngModel">
                 </div>
               </div>
             </div>
             <div class="form-group col-md-2">
               <label for="inputZip">numero de telephone*</label>
-              <input type="text" class="form-control" name="telephone" [(ngModel)]="utilisateur.telephone" #telephone="ngModel">
+              <input type="text" class="form-control" name="telephone" [(ngModel)]="utilisateur2.telephone" #telephone="ngModel">
             </div>
             <div class="form-group">
               <label for="inputAddress">Address*</label>
-              <input type="text" class="form-control" name="adresse" placeholder="adresse" [(ngModel)]="utilisateur.adresse" #adresse="ngModel">
+              <input type="text" class="form-control" name="adresse" placeholder="adresse" [(ngModel)]="utilisateur2.adresse" #adresse="ngModel">
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputCity">Entreprise</label>
-                <input type="text" class="form-control" name="entreprise" [(ngModel)]="utilisateur.entreprise" #entreprise="ngModel">
+                <input type="text" class="form-control" name="entreprise" [(ngModel)]="utilisateur2.entreprise" #entreprise="ngModel">
               </div>
               <div class="form-group col-md-4">
                 <label for="inputState">Statut*</label>
-                <select name="statut" class="form-control" [(ngModel)]="utilisateur.statut" #statut="ngModel">
-                  <option selected>Choose...</option>
-                  <option>particulier</option>
+                <select name="statut" class="form-control" [(ngModel)]="utilisateur2.statut" #statut="ngModel">
+                
+                  <option selected>particulier</option>
                   <option>professionnel</option>
                 </select>
               </div>

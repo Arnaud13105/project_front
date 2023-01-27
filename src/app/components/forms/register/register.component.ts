@@ -12,8 +12,8 @@ export class RegisterComponent {
 
 
 
-  utilisateur: Users = {};
-  utilisateurs!: Users[];
+  utilisateur2: Users = {};
+  utilisateurs2!: Users[];
   interval!: NodeJS.Timer;
 
   constructor(private usersService: UsersService) { }
@@ -30,19 +30,19 @@ export class RegisterComponent {
 
   getAll() {
     this.usersService.getAll().subscribe(res => {
-      this.utilisateurs = res;
+      this.utilisateurs2 = res;
     })
   }
 
   add(form: NgForm) {
     
-    if (this.utilisateur.id != null) {
-      this.usersService.update(this.utilisateur.id, this.utilisateur).subscribe(res => {
+    if (this.utilisateur2.id != null) {
+      this.usersService.update(this.utilisateur2.id, this.utilisateur2).subscribe(res => {
         this.getAll();
         form.resetForm();
       })
     } else {
-      this.usersService.add(this.utilisateur).subscribe(res => {
+      this.usersService.add(this.utilisateur2).subscribe(res => {
         this.getAll();
         form.resetForm();
       })
@@ -57,7 +57,7 @@ export class RegisterComponent {
 
   get(id: number) {
     this.usersService.getOne(id).subscribe(res => {
-      this.utilisateur = res;
+      this.utilisateur2 = res;
       this.getAll();
     })
   }
