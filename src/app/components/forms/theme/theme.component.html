@@ -1,0 +1,29 @@
+<h2>Theme 1: Listes des Formations</h2>
+
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Formation</th>
+            <th> Domaine </th>
+            <th> Theme</th>
+            <th> Description</th>
+            <th> Prix (en euros) </th>
+            <th> Durée</th>
+            <th> Pré-requis</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let theme of themes" >
+            <td> {{ theme .nomformation }} </td>
+            <td> {{ theme .domaine }} </td>
+            <td> {{ theme .theme }}</td>
+            <td> {{ theme .description}}</td>
+            <td> {{ theme .prix}}</td>
+            <td> {{ theme .duree}}</td>
+            <td> {{ theme .prerequis}}</td>
+            <button  class = "btn btn-info"> Soumettre</button>
+        </tr>
+        <td>
+        </td>
+    </tbody>
+</table>

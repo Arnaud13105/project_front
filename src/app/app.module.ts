@@ -19,6 +19,8 @@ import { NotFoundComponent } from './components/core/not-found/not-found.compone
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeConnectedComponent } from './components/home-connected/home-connected.component';
+import { ThemeComponent } from './components/forms/theme/theme.component';
+import { ThemeBComponent } from './components/forms/theme-b/theme-b.component';
 
 
 
@@ -39,6 +41,8 @@ import { HomeConnectedComponent } from './components/home-connected/home-connect
     FooterComponent,
     NotFoundComponent,
     HomeConnectedComponent,
+    ThemeComponent,
+    ThemeBComponent,
   ],
   imports: [
     BrowserModule,
