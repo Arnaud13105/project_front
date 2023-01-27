@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse  } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
-import { Theme } from 'src/app/interfaces/themes';
 import { Observable, throwError } from 'rxjs';
+import { Formation } from 'src/app/interfaces/formation';
 
 @Injectable({
   providedIn: 'root'
@@ -13,23 +13,12 @@ export class ThemesService {
 
   constructor(private http: HttpClient) { }
  
-  getAll(): Observable<Theme[]>{
+  getAll(): Observable<Formation[]>{
     let API_URL = `${this.url}`;
-    return this.http.get<Array<Theme>>(API_URL)
+    return this.http.get<Array<Formation>>(API_URL)
     .pipe(
       map((res:any) => {
         return res || [];
-      }),
-      catchError(this.errorMgmt)
-    );
-  }
-
-  getTheme(theme: string): Observable<Theme>{
-    let API_URL = `${this.url}/${theme}`;
-    return this.http.get(API_URL)
-    .pipe(
-      map((res: any) => {
-        return res || {};
       }),
       catchError(this.errorMgmt)
     );

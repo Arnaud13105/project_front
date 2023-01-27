@@ -1,8 +1,8 @@
 
-import { Theme } from "./themes";
+import { Formation } from "./formation";
 
 
-export const THEME1: Theme[] = [
+export const THEME1: Formation[] = [
 
     
     {id :1, nomformation : 'JavaEE',  domaine : 'Informatique',    theme : 'Informatique',    description: 'en presidentielle',     prix : '200',    duree : '3', prerequis : 'Des connaissances en Java (telles que les notions de classes, objets, héritage'},
@@ -10,7 +10,7 @@ export const THEME1: Theme[] = [
     {id :3, nomformation : 'Python',  domaine : 'informatique',    theme : 'informatique',    description: 'en presidentielle',     prix : '180',   duree : '3', prerequis : 'Des connaissances en python'},
 ];
 
-export const THEME2: Theme[] = [
+export const THEME2: Formation[] = [
 
 
     {id :1, nomformation : 'Spring',  domaine : 'Informatique',    theme : 'theme2',    description: 'en presidentielle',     prix : '200',   duree : '3', prerequis : 'connaissance en Spring'},

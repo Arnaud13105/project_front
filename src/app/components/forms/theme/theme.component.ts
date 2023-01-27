@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Theme } from 'src/app/interfaces/themes';
+import { Formation} from 'src/app/interfaces/formation';
 import { ThemesService } from 'src/app/shared/themes/themes.service';
 
 
@@ -12,14 +12,12 @@ import { ThemesService } from 'src/app/shared/themes/themes.service';
 })
 export class ThemeComponent {
 
-
-theme1: Theme = {}
-themes: Theme[] = [];
+themes: Formation[] = [];
 
 constructor(private themesService: ThemesService) { }
 
 ngOnInit(): void {
-  this.getAll()
+  this.getAll();
 }
 
 getAll() {
@@ -27,19 +25,5 @@ getAll() {
     this.themes = res;
   })
 }
-
-
-getTheme1(theme: string){
-  this.themesService.getTheme(theme).subscribe(res => {
-    this.theme1 = res;
-    this.getAll();
-  })
-}
-
-
-
-
-
-
 
 }

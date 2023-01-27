@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Theme } from 'src/app/interfaces/themes';
-import { THEME2 } from 'src/app/interfaces/mock-themes';
+import { ThemesService } from 'src/app/shared/themes/themes.service';
+import { Formation } from 'src/app/interfaces/formation';
+
 
 @Component({
   selector: 'app-theme-b',
@@ -8,10 +9,17 @@ import { THEME2 } from 'src/app/interfaces/mock-themes';
   styleUrls: ['./theme-b.component.css']
 })
 export class ThemeBComponent {
-  theme1 = THEME2;
-  selectedFormation?: Theme;
-  
-  onselect(formation: Theme): void {
-    this.selectedFormation = formation;
-  }
+  themes: Formation[] = [];
+
+constructor(private themesService: ThemesService) { }
+
+ngOnInit(): void {
+  this.getAll();
+}
+
+getAll() {
+  this.themesService.getAll().subscribe(res => {
+    this.themes = res;
+  })
+}
 }
