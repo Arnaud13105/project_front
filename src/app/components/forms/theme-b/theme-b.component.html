@@ -1,0 +1,29 @@
+<h2>Theme 2: Listes des Formations</h2>
+
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Formation</th>
+            <th> Domaine </th>
+            <th> Theme</th>
+            <th> Description</th>
+            <th> Prix (en euros) </th>
+            <th> Durée</th>
+            <th> Pré-requis</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let formation of themes " >
+        <ng-container *ngIf="formation.theme === 'newTech'">
+            <td> {{ formation.nomFormation }} </td>
+            <td> {{ formation.domaine }} </td>
+            <td> {{ formation.theme }}</td>
+            <td> {{ formation.description}}</td>
+            <td> {{ formation.prix}}</td>
+            <td> {{ formation.duree}}</td>
+            <td> {{ formation.prerequis}}</td>
+            <button  class = "btn btn-info"> Sessions</button>
+        </ng-container>
+        </tr>
+    </tbody>
+</table>

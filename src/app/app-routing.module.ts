@@ -13,6 +13,8 @@ import { TestComponent } from './components/forms/test/test.component';
 import { UsersComponent } from './components/forms/users/users.component';
 import { HomeConnectedComponent } from './components/home-connected/home-connected.component';
 import { HomeComponent } from './components/home/home.component';
+import { ThemeComponent } from './components/forms/theme/theme.component';
+import { ThemeBComponent } from './components/forms/theme-b/theme-b.component';
 
 
 
@@ -30,6 +32,8 @@ const routes: Routes = [
   { path: 'session/:session.id', component: SessionsComponent },
   { path: '404', component: NotFoundComponent },
   {path: 'homeConnected', component: HomeConnectedComponent},
+  {path: 'themeConnected', component: ThemeComponent},
+  {path: 'themeBConnected', component: ThemeBComponent},
   {path: 'login', component: LoginComponent},
 
 ];
