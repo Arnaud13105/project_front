@@ -13,12 +13,23 @@ export class SessionsService {
 
   url: string ='http://localhost:8080/api/sessions';
 
-  constructor(private htpp: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
   getAll(): Observable<Sessions[]>{
     let API_URL = `${this.url}`;
-    return this.htpp.get<Array<Sessions>>(API_URL)
+    return this.http.get<Array<Sessions>>(API_URL)
+    .pipe(
+      map((res:any) => {
+        return res || [];
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+  getOne(formationId: number): Observable<Sessions[]>{
+    let API_URL = `${this.url}/${formationId}`;
+    return this.http.get(API_URL)
     .pipe(
       map((res:any) => {
         return res || [];

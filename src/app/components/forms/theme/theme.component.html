@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <tr *ngFor = "let formation of themes " >
-        <ng-container *ngIf="formation.theme === 'Informatique'">
+        <ng-container *ngIf="formation.theme === 'newTech'">
             <td> {{ formation.nomFormation }} </td>
             <td> {{ formation.domaine }} </td>
             <td> {{ formation.theme }}</td>
@@ -22,7 +22,8 @@
             <td> {{ formation.prix}}</td>
             <td> {{ formation.duree}}</td>
             <td> {{ formation.prerequis}}</td>
-            <button (click)="goTo()" class = "btn btn-info"> Sessions</button>
+            <td> {{ formation.id}}</td>
+            <button (click)="goTo(formation.id!)" class = "btn btn-info"> Sessions</button>
         </ng-container>
         </tr>
     </tbody>

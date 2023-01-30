@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Users } from 'src/app/interfaces/users';
 import { UsersService } from 'src/app/shared/users/users.service';
 
@@ -16,9 +17,11 @@ export class RegisterComponent {
   utilisateurs2!: Users[];
   interval!: NodeJS.Timer;
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService,
+    private router: Router
+  ) { }
 
-  
+
 
   ngOnInit() {
     // Bonjout tt le monde
@@ -35,16 +38,20 @@ export class RegisterComponent {
   }
 
   add(form: NgForm) {
-    
+
     if (this.utilisateur2.id != null) {
       this.usersService.update(this.utilisateur2.id, this.utilisateur2).subscribe(res => {
         this.getAll();
         form.resetForm();
+        alert("création de compte réussi"), 5000
+        this.router.navigate(['/login'])
       })
     } else {
       this.usersService.add(this.utilisateur2).subscribe(res => {
         this.getAll();
         form.resetForm();
+        alert("création de compte réussi"), 5000
+        this.router.navigate(['/login'])
       })
     }
   }
@@ -62,7 +69,10 @@ export class RegisterComponent {
     })
   }
 
-
+  GoTo() {
+    alert("création de compte réussi"), 5000
+    this.router.navigate(['/login'])
+  }
 
 }
 

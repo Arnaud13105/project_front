@@ -9,6 +9,6 @@ export interface Sessions {
     formateur?: string,
     support?: string,
     autres?: string,
-    id_formation?: number;
+    formationId?: string;
     
 }

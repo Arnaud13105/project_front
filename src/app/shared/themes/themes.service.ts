@@ -24,6 +24,17 @@ export class ThemesService {
     );
   }
 
+  getOne(id: number): Observable<Formation>{
+    let API_URL = `${this.url}/${id}`;
+    return this.http.get(API_URL)
+    .pipe(
+      map((res:any) => {
+        return res || [];
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
 
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';

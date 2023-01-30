@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Formation} from 'src/app/interfaces/formation';
+import { Formation } from 'src/app/interfaces/formation';
 import { ThemesService } from 'src/app/shared/themes/themes.service';
 import { Router } from '@angular/router';
+import { FormationsComponent } from '../formations/formations.component';
+
+
+
+
+
 
 
 
@@ -13,22 +18,35 @@ import { Router } from '@angular/router';
 })
 export class ThemeComponent {
 
-themes: Formation[] = [];
+  url: string = 'http://localhost:8080/api/formations';
 
-constructor(private themesService: ThemesService,
-  private router: Router) { }
+  themes: Formation[] = [];
+  formation: Formation = {};
 
-ngOnInit(): void {
-  this.getAll();
-}
 
-getAll() {
-  this.themesService.getAll().subscribe(res => {
-    this.themes = res;
-  })
-}
+  constructor(private themesService: ThemesService,
+    private router: Router,
+  ) { }
 
-goTo(): void{
-  this.router.navigate(['/form']);
-}
+  ngOnInit(): void {
+    this.getAll();
+    console.log(this.themes)
+  }
+
+  getAll() {
+    this.themesService.getAll().subscribe(res => {
+      this.themes = res;
+      
+    })
+  }
+
+  goTo(id: number) {
+    this.themesService.getOne(id).subscribe((data: any) => {
+      this.formation = data;
+      // this.getAll;
+      console.log(this.formation.id)
+      localStorage.setItem('formation', JSON.stringify(this.formation.id));
+    })
+    this.router.navigate(['session/:session.id'])
+  }
 }

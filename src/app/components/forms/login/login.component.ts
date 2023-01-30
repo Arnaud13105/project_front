@@ -14,11 +14,6 @@ export class LoginComponent {
 
   email!: string;
   password!: string;
-
-
-
-
-
   res!: any;
 
   constructor(
@@ -47,7 +42,7 @@ export class LoginComponent {
       
       if (this.res.id !== undefined) {
         this.router.navigate(['/homeConnected']),
-        localStorage.setItem('user', res)
+        localStorage.setItem('user', res.id)
       } else { console.log('error');
       alert("email ou password invalide")
        }

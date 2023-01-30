@@ -10,12 +10,13 @@
     </thead>
     <tbody>
         <tr *ngFor = "let session of sessions" >
-            <div *ngIf = "session.id_formation === formationId">
+            <ng-container>
+                <td> {{ session.formationId}} </td>
                 <td> {{ session.dateDebut }} </td>
                 <td> {{ session.dateFin }} </td>
                 <td> {{ session.lieu }} </td>
                 <button  class = "btn btn-info"> Soumettre</button>
-            </div>
+            </ng-container>
         </tr>
         <td>
         </td>

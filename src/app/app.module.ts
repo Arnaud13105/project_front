@@ -44,7 +44,9 @@ import { LoginService } from './shared/login/login.service';
     FooterComponent,
     NotFoundComponent,
     HomeConnectedComponent,
-    LoginComponent
+    LoginComponent,
+    ThemeComponent,
+    ThemeBComponent,
   ],
   imports: [
     BrowserModule,
