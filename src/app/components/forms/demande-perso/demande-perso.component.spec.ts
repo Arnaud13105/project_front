@@ -1,23 +1,61 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { getLocaleCurrencyCode } from '@angular/common';
+import { DemandepersoService } from 'src/app/shared/demandeperso/demandeperso.service';
+import { Demandeperso } from 'src/app/interfaces/demandeperso';
 
-import { DemandePersoComponent } from './demande-perso.component';
 
-describe('DemandePersoComponent', () => {
-  let component: DemandePersoComponent;
-  let fixture: ComponentFixture<DemandePersoComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ DemandePersoComponent ]
+@Component({
+  selector: 'app-demande-perso',
+  templateUrl: './demande-perso.component.html',
+  styleUrls: ['./demande-perso.component.css']
+})
+export class DemandePersoComponent {
+
+  demandeperso: Demandeperso = {};
+  demandepersos: Demandeperso[] = []; 
+  interval!: NodeJS.Timer;
+
+  constructor(private demandepersoService: DemandepersoService) { }
+
+ ngOnInit() {
+    this.getAll();
+    this.interval = setInterval(() => {
+      this.getAll();
+    }, 5000);
+  }
+
+  getAll() {
+    this.demandepersoService.getAll().subscribe(res => {
+      this.demandepersos = res;
     })
-    .compileComponents();
+  }
 
-    fixture = TestBed.createComponent(DemandePersoComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  add(form: NgForm) {
+    if (this.demandeperso.id != null) {
+      this.demandepersoService.update(this.demandeperso.id, this.demandeperso).subscribe(res => {
+        this.getAll();
+        form.resetForm();
+      })
+    } else {
+      this.demandepersoService.add(this.demandeperso).subscribe(res => {
+        this.getAll();
+        form.resetForm();
+      })
+    }
+  }
+  
+  get(id: number) {
+    this.demandepersoService.getOne(id).subscribe(res => {
+      this.demandeperso = res;
+      this.getAll();
+    })
+  }
+  
+  delete(id: number) {
+    this.demandepersoService.delete(id).subscribe(data => {
+      this.getAll();
+    })   
+  }
+}

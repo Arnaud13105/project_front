@@ -25,6 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material-module';
 import { ThemeBComponent } from './components/forms/theme-b/theme-b.component';
 import { ThemeComponent } from './components/forms/theme/theme.component';
+import { InformatiqueComponent } from './components/informatique/informatique.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { NewTechComponent } from './components/new-tech/new-tech.component';
 
 
 
@@ -49,6 +52,9 @@ import { ThemeComponent } from './components/forms/theme/theme.component';
     LoginComponent,
     ThemeComponent,
     ThemeBComponent,
+    InformatiqueComponent,
+    ContactComponent,
+    NewTechComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-6">
         <form action="POST" (ngSubmit)="add(utilisateurForm)"  #utilisateurForm=ngForm>
+           
             <input type="text" class="form-control" name="id" [(ngModel)]="utilisateur.id" #id="ngModel" hidden>
             <div class="form-group">
                 <label>prenom</label>
@@ -41,16 +42,19 @@
             <button type="submit" class="btn btn-success">Envoyer</button>
         </form>
     </div>
+    
     <div class="col-6">
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let item of utilisateurs" >
                 <span>{{item.prenom}} {{item.nom}} {{item.dateNaissance}} {{item.email}} {{item.adresse}} {{item.entreprise}} {{item.telephone}} {{item.statut}} {{item.password}}</span>
+                <tr>
                 <button class="btn btn-danger" (click)="delete(item.id!)">
                     Supprimer
                 </button>
                 <button class="btn btn-primary" (click)="get(item.id!)">
                     Afficher
                 </button>
+            </tr>
             </li>
         </ul>        
     </div>

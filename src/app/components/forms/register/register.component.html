@@ -59,8 +59,9 @@
                 <label for="inputState">Statut*</label>
                 <select name="statut" class="form-control" [(ngModel)]="utilisateur2.statut" #statut="ngModel">
                 
-                  <option selected>particulier</option>
+                  <option class="dropdown-item" disabled selected value="undefined">veuiller choisir votre status</option>
                   <option>professionnel</option>
+                  <option>particulier</option>
                 </select>
               </div>
 

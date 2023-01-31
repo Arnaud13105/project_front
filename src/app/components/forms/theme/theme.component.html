@@ -1,11 +1,9 @@
-<h2>Theme 1: Listes des Formations</h2>
+<h2>Informatique: Listes des Formations</h2>
 
 <table class = "table table-striped">
     <thead>
         <tr>
             <th> Formation</th>
-            <th> Domaine </th>
-            <th> Theme</th>
             <th> Description</th>
             <th> Prix (en euros) </th>
             <th> Durée</th>
@@ -16,13 +14,61 @@
         <tr *ngFor = "let formation of themes " >
         <ng-container *ngIf="formation.theme === 'informatique'">
             <td> {{ formation.nomFormation }} </td>
-            <td> {{ formation.domaine }} </td>
-            <td> {{ formation.theme }}</td>
             <td> {{ formation.description}}</td>
             <td> {{ formation.prix}}</td>
             <td> {{ formation.duree}}</td>
             <td> {{ formation.prerequis}}</td>
-            <button  class = "btn btn-info"> Sessions</button>
+            <button type="button"  class="btn btn-primary text" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                sessions
+               </button>
+               <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h1 class="modal-title fs-5" id="staticBackdropLabel">Sessions disponibles: </h1>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                     <div class="modal-body">
+                       <table class="table table-striped">
+                       <thead>
+                           <tr>
+                               <th> Formation</th>
+                               <th> Domaine </th>
+                               <th> Theme</th>
+                               <th> Description</th>
+                               <th> Prix (en euros) </th>
+                               <th> Durée</th>
+                               <th> Date de début de session</th>
+                               <th> Date de fin </th>
+                               <th> Lieu</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                         
+                        <tr *ngFor="let session of sessions">
+                          <ng-container *ngIf="this.session.formation.id === 1">
+                              <td> {{ session.formation.nomFormation }}</td>
+                              <td> {{ session.formation.domaine}}</td>
+                              <td> {{ session.formation.theme }}</td>
+                              <td> {{ session.formation.prix}}</td>
+                              <td> {{ session.formation.duree}}</td>
+                              <td> {{ session.dateDebut }} </td>
+                              <td> {{ session.dateFin }} </td>
+                              <td> {{ session.lieu }} </td>
+              
+                              <button (click)="goto()" class="btn btn-info" data-bs-dismiss="modal"> Soumettre</button>
+                          </ng-container>
+                          </tr>
+                       </tbody>
+                   </table>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">fermer</button>
+                       
+                     </div>
+                   </div>
+                 </div>
+               </div>
         </ng-container>
         </tr>
     </tbody>

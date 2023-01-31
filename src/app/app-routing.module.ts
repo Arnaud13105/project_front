@@ -15,6 +15,9 @@ import { HomeConnectedComponent } from './components/home-connected/home-connect
 import { HomeComponent } from './components/home/home.component';
 import { ThemeBComponent } from './components/forms/theme-b/theme-b.component';
 import { ThemeComponent } from './components/forms/theme/theme.component';
+import { InformatiqueComponent } from './components/informatique/informatique.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { NewTechComponent } from './components/new-tech/new-tech.component';
 
 
 
@@ -27,7 +30,7 @@ const routes: Routes = [
   { path: 'formation/:id', component: FormationsComponent },
   { path: 'formation/:id/session/:session.id', component: FormulaireComponent },
   { path: 'demandeintra', component: DemandeIntraComponent },
-  { path: 'users/demande/perso', component: DemandePersoComponent },
+  { path: 'demandePerso', component: DemandePersoComponent },
   { path: 'session/:session.id/test', component: TestComponent },
   { path: 'session/:session.id', component: SessionsComponent },
   { path: '404', component: NotFoundComponent },
@@ -35,6 +38,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'themeConnected', component: ThemeComponent},
   {path: 'themeBConnected', component: ThemeBComponent},
+  {path: 'informatique', component: InformatiqueComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'newTech', component: NewTechComponent},
 
 
 
