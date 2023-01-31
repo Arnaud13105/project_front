@@ -44,7 +44,6 @@ export class DemandeIntraComponent {
   }
 
 
-
   add(form: NgForm) {
     var formationId= this.formation.id!;
     this.demandeintraService.add(formationId, this.demandeintra).subscribe(res => {
