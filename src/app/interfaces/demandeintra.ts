@@ -6,8 +6,8 @@ export interface Demandeintra {
     telephone?: string,
     email?: string,
     dateDebut?: Date,
-    lieu?: string,  
+    lieu?: string,
     eligibleCPF?: string,
     nbrInscrits?: number,
-    
+    formation?: any,
 }

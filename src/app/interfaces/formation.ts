@@ -1,6 +1,6 @@
 export interface Formation {
     id?: number,
-    nomformation?: string,
+    nomFormation?: string,
     domaine?: string,
     theme?: string,
     description?: string,

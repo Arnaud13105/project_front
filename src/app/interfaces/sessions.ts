@@ -7,5 +7,6 @@ export interface Sessions {
     formateur?: string,
     support?: string,
     autres?: string,
+    formation?: any,
     
 }

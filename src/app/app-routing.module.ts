@@ -13,6 +13,8 @@ import { TestComponent } from './components/forms/test/test.component';
 import { UsersComponent } from './components/forms/users/users.component';
 import { HomeConnectedComponent } from './components/home-connected/home-connected.component';
 import { HomeComponent } from './components/home/home.component';
+import { ThemeBComponent } from './components/forms/theme-b/theme-b.component';
+import { ThemeComponent } from './components/forms/theme/theme.component';
 
 
 
@@ -24,13 +26,19 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'formation/:id', component: FormationsComponent },
   { path: 'formation/:id/session/:session.id', component: FormulaireComponent },
-  { path: 'users/demande/intra', component: DemandeIntraComponent },
+  { path: 'demandeintra', component: DemandeIntraComponent },
   { path: 'users/demande/perso', component: DemandePersoComponent },
   { path: 'session/:session.id/test', component: TestComponent },
   { path: 'session/:session.id', component: SessionsComponent },
   { path: '404', component: NotFoundComponent },
   {path: 'homeConnected', component: HomeConnectedComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'themeConnected', component: ThemeComponent},
+  {path: 'themeBConnected', component: ThemeBComponent},
+
+
+
+  { path: "**", redirectTo:'404'}
 
 ];
 

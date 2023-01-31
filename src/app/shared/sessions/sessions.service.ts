@@ -10,13 +10,25 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class SessionsService {
 
-  url: string ='http://localhost:8080/api/sessions';
+  url: string ='http://localhost:8080/api/formations';
+ 
 
   constructor(private htpp: HttpClient) { }
 
 
-  getAll(): Observable<Sessions[]>{
-    let API_URL = `${this.url}`;
+  getAllSession(): Observable<Sessions[]>{
+    let API_URL = `${this.url}/sessions`;
+    return this.htpp.get<Array<Sessions>>(API_URL)
+    .pipe(
+      map((res:any) => {
+        return res || [];
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+  getSessionsByFormationId(id: number): Observable<Sessions[]> {
+    let API_URL = `${this.url}/${id}/sessions`;
     return this.htpp.get<Array<Sessions>>(API_URL)
     .pipe(
       map((res:any) => {

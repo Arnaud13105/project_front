@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,6 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeConnectedComponent } from './components/home-connected/home-connected.component';
 import { LoginComponent } from './components/forms/login/login.component';
 import { LoginService } from './shared/login/login.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material-module';
+import { ThemeBComponent } from './components/forms/theme-b/theme-b.component';
+import { ThemeComponent } from './components/forms/theme/theme.component';
 
 
 
@@ -43,12 +47,17 @@ import { LoginService } from './shared/login/login.service';
     NotFoundComponent,
     HomeConnectedComponent,
     LoginComponent,
+    ThemeComponent,
+    ThemeBComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

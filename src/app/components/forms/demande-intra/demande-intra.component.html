@@ -8,44 +8,44 @@
                         <h4>Coordonnées</h4>
                         <div class="form-row">
 
-                                <input type="text" class="form-control" name="id" [(ngModel)]="demandeintra.id"
-                                    #id="ngModel" hidden>
-                                <div class="row">
-                                    <div class="col">
-                                        <label>Prenom</label>
-                                        <input type="text" class="form-control" name="prenom"
-                                            [(ngModel)]="demandeintra.prenom" #prenom="ngModel" placeholder="Prenom">
-                                    </div>
-                                    <div class="col">
-                                        <label>Nom</label>
-                                        <input type="text" class="form-control" name="nom"
-                                            [(ngModel)]="demandeintra.nom" #nom="ngModel" placeholder="Nom">
-                                    </div>
+                            <input type="text" class="form-control" name="id" [(ngModel)]="demandeintra.id"
+                                #id="ngModel" hidden>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Prenom</label>
+                                    <input type="text" class="form-control" name="prenom"
+                                        [(ngModel)]="demandeintra.prenom" #prenom="ngModel" placeholder="Prenom">
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control" [(ngModel)]="demandeintra.email"
-                                            #email="ngModel" name="Email" placeholder="Email">
-                                    </div>
-                                    <div class="col">
-                                        <label>Teléphone</label>
-                                        <input type="text" [(ngModel)]="demandeintra.telephone" #telephone="ngModel"
-                                            name="telephone" class="form-control" placeholder="Telephone">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputEntreprise">Entreprise</label>
-                                        <input type="text" class="form-control" [(ngModel)]="demandeintra.entreprise"
-                                            #entreprise="ngModel" name="Entreprise" placeholder="Entreprise">
-                                    </div>
+                                <div class="col">
+                                    <label>Nom</label>
+                                    <input type="text" class="form-control" name="nom" [(ngModel)]="demandeintra.nom"
+                                        #nom="ngModel" placeholder="Nom">
                                 </div>
-                            
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" [(ngModel)]="demandeintra.email"
+                                        #email="ngModel" name="Email" placeholder="Email">
+                                </div>
+                                <div class="col">
+                                    <label>Teléphone</label>
+                                    <input type="text" [(ngModel)]="demandeintra.telephone" #telephone="ngModel"
+                                        name="telephone" class="form-control" placeholder="Telephone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEntreprise">Entreprise</label>
+                                    <input type="text" class="form-control" [(ngModel)]="demandeintra.entreprise"
+                                        #entreprise="ngModel" name="Entreprise" placeholder="Entreprise">
+                                </div>
+                            </div>
+
                             <br>
                             <h4>Plannification</h4>
                             <div class="form-group col-md-6">
                                 <label>Date envisagée</label>
-                                <input type="date"  placeholder="yyyy-mm-dd" [(ngModel)]="demandeintra.dateDebut" #date="ngModel"
-                                    class="form-control" name="dateDebut">
+                                <input type="text" placeholder="yyyy-mm-dd" [(ngModel)]="demandeintra.dateDebut"
+                                    #date="ngModel" class="form-control" name="dateDebut">
                             </div>
                         </div>
                         <div class="form-row">
@@ -55,7 +55,7 @@
                                     class="form-control" name="NbrInscrits">
                             </div>
                             <div class="form-group col-md-6">
-                                <label >Le lieu de la formation
+                                <label>Le lieu de la formation
                                     (mettre nos locals de formation ou local entreprise)
                                 </label>
                                 <input type="text" [(ngModel)]="demandeintra.lieu" #lieu="ngModel" class="form-control"
@@ -63,11 +63,22 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Eligible au CPF</label>
-                                <input type="text" [(ngModel)]="demandeintra.eligibleCPF" #eligibleCPF="ngModel" class="form-control"
-                                    name="eligibleCPF">
+                                <input type="text" [(ngModel)]="demandeintra.eligibleCPF" #eligibleCPF="ngModel"
+                                    class="form-control" name="eligibleCPF">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Formation</label> <br>
+                                <select [(ngModel)]="formation.id" name="formationId">
+                                    <option class="dropdown-item" disabled selected value="undefined">Selectionner une
+                                        Formation
+                                    </option>
+                                    <option *ngFor="let formation of formations" [value]="formation.id">
+                                        {{formation.id}} {{formation.nomFormation}}
+                                    </option>
+                                </select>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class=" form-group">
                         </div>
                         <br>
                         <button type="submit" class="btn btn-success">Confirmer ma demande de formation intra
@@ -77,17 +88,4 @@
             </div>
         </div>
     </div>
-</div>
-<div class="col-6">
-    <ul class="list-group">
-        <li class="list-group-item" *ngFor="let item of demandeintras" >
-            <span>{{item.prenom}} {{item.nom}} {{item.dateDebut}} {{item.email}} {{item.entreprise}} {{item.telephone}}</span>
-            <button class="btn btn-danger" (click)="delete(item.id!)">
-                Supprimer
-            </button>
-            <button class="btn btn-primary" (click)="get(item.id!)">
-                Afficher
-            </button>
-        </li>
-    </ul>        
 </div>

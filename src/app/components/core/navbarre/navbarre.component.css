@@ -1,0 +1,36 @@
+
+
+.dropdown {
+    position: static !important;
+}
+
+.dropdown-menu {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
+    margin-top: 0px !important;
+    width: 100% !important;
+}
+
+.dropdown-item {
+    display: inline;
+
+}
+
+.dropdown-menu>li { display: table-cell;}
+
+.right {
+    position: relative;
+    float:right;
+}
+
+ul li a:hover { 
+    background: #e2e2e2;
+}
+
+.sticky {
+    position: sticky;
+    width: 100%;
+    transition: 0.2s linear;
+    top: 0px;
+    z-index: 1;
+
+}
